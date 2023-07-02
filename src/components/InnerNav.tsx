@@ -1,12 +1,12 @@
 import React from "react";
 import TransparentButton from "./TransparentButton";
 
-interface InnerNavProps {
-  active: string;
-  planet: string;
-}
+// interface InnerNavProps {
+//   active: string;
+//   planet: string;
+// }
 
-const InnerNav: React.FC<InnerNavProps> = ({}) => {
+const InnerNav: React.FC = ({}) => {
   return (
     <div className="flex flex-col gap-4">
       <TransparentButton number="01" text="Overview" />
