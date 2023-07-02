@@ -1,7 +1,25 @@
 import React, { useState, useEffect } from "react";
+import { useStore, Store } from "../store";
 
 const Nav: React.FC = () => {
+  const planets: string[] = [
+    "mercury",
+    "venus",
+    "earth",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+  ];
+
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+
+  const changePlanet = useStore((state: Store) => {
+    return state.changePlanet;
+  });
+
+  const currentPlanet = useStore((state: Store) => state.planet);
 
   const listItemStyles =
     "flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start";
@@ -25,21 +43,28 @@ const Nav: React.FC = () => {
 
   return (
     <nav>
-      <div className="flex w-full flex-row justify-center border-b-[1px] border-slate-800">
-        <div className="flex w-full flex-row items-center justify-between p-8 md:w-[95rem] md:flex-col lg:flex-row">
-          <h2 className="mb-0 text-3xl md:mb-12 lg:mb-0">THE PLANETS</h2>
-          <div>
-            <ul className="hidden flex-row gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
-              <li>Mercury</li>
-              <li>Venus</li>
-              <li>Earth</li>
-              <li>Mars</li>
-              <li>Jupiter</li>
-              <li>Saturn</li>
-              <li>Uranus</li>
-              <li>Neptune</li>
-            </ul>
-          </div>{" "}
+      <div className="flex w-full h-[6rem] flex-row justify-center border-b-[1px] border-slate-800">
+        <div className="flex w-full h-full justify-between md:w-[95rem] md:flex-col lg:flex-row">
+          <h2 className="mb-0 text-3xl md:mb-12 lg:mb-0 self-center">
+            THE PLANETS
+          </h2>
+
+          <ul className="hidden h-fullflex-row gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
+            {planets.map((planet) => {
+              return (
+                <li
+                  className={`h-full flex items-center ${
+                    planet === currentPlanet && "border-t-4 border-white"
+                  }`}
+                  key={planet}
+                  onClick={() => changePlanet(planet)}
+                >
+                  {planet}
+                </li>
+              );
+            })}
+          </ul>
+
           <div className="MOBILE-MENU flex md:hidden">
             <div
               className="HAMBURGER-ICON space-y-2"

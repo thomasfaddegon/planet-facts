@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type Store = {
+export type Store = {
   planet: string;
   section: string;
   changePlanet: (newPlanet: string) => void;
