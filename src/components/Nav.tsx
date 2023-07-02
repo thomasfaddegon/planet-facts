@@ -26,7 +26,7 @@ const Nav: React.FC = () => {
   return (
     <nav>
       <div className="flex w-full flex-row justify-center border-b-[1px] border-slate-800">
-        <div className="flex w-full flex-row items-center justify-between p-8 md:w-[100rem] md:flex-col lg:flex-row">
+        <div className="flex w-full flex-row items-center justify-between p-8 md:w-[95rem] md:flex-col lg:flex-row">
           <h2 className="mb-0 text-3xl md:mb-12 lg:mb-0">THE PLANETS</h2>
           <div>
             <ul className="hidden flex-row gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
