@@ -1,5 +1,8 @@
+import { useStore } from "../store";
+
 const PlanetImage: React.FC = ({}) => {
-  const planet = "earth";
+  const planet = useStore((state) => state.planet);
+
   return (
     <div className="m-2 flex w-8/12 justify-center">
       <img

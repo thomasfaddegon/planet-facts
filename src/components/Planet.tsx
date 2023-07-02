@@ -4,11 +4,7 @@ import InnerNav from "./InnerNav";
 import FactRow from "./FactRow";
 import MainInfo from "./MainInfo";
 
-interface PlanetProps {
-  planet: string;
-}
-
-const Planet: React.FC<PlanetProps> = ({}) => {
+const Planet: React.FC = ({}) => {
   return (
     <div className="max-w-[78rem] px-4">
       {/* row with planet and info */}

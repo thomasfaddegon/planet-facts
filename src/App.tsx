@@ -8,7 +8,7 @@ function App() {
     <div className="">
       <Nav />
       <div className="flex-column flex min-h-[100vh] w-full justify-center pt-24">
-        <Planet planet="earth" />
+        <Planet />
       </div>
     </div>
   );
