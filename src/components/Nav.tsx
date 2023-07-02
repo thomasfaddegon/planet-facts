@@ -44,7 +44,7 @@ const Nav: React.FC = () => {
   return (
     <nav>
       <div className="flex w-full h-[6rem] flex-row justify-center border-b-[1px] border-slate-800">
-        <div className="flex w-full h-full justify-between md:w-[95rem] md:flex-col lg:flex-row">
+        <div className="flex w-full h-full justify-between md:w-[95rem] md:flex-col lg:flex-row px-4">
           <h2 className="mb-0 text-3xl md:mb-12 lg:mb-0 self-center">
             THE PLANETS
           </h2>
@@ -54,7 +54,7 @@ const Nav: React.FC = () => {
               return (
                 <li
                   className={`h-full flex items-center ${
-                    planet === currentPlanet && "border-t-4 border-white"
+                    planet === currentPlanet && "border-t-4 pb-1 border-white"
                   }`}
                   key={planet}
                   onClick={() => changePlanet(planet)}
