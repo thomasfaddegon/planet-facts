@@ -53,7 +53,7 @@ const Nav: React.FC = () => {
             {planets.map((planet) => {
               return (
                 <li
-                  className={`h-full flex items-center ${
+                  className={`h-full flex items-center cursor-pointer ${
                     planet === currentPlanet && "border-t-4 pb-1 border-white"
                   }`}
                   key={planet}

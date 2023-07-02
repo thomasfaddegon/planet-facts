@@ -14,15 +14,15 @@ const MainInfo: React.FC = () => {
   console.log(planetData);
 
   return (
-    <>
+    <div className="flex flex-col gap-8 ">
       <h1 className="text-7xl">{planetData?.name}</h1>
-      <p className="spartan pr-2 tracking-wide">
+      <p className="spartan pr-2 tracking-wide min-h-[10rem]">
         {planetData?.[currentSection].content}
       </p>
       <p>
         <a href={planetData?.[currentSection].source}>Source: Wikipedia</a>{" "}
       </p>
-    </>
+    </div>
   );
 };
 

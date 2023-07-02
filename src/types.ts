@@ -23,7 +23,4 @@ export interface PlanetData {
   };
 }
 
-export interface Section {
-  content: string;
-  source: string;
-}
+export type Section = "overview" | "structure" | "geology";
