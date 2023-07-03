@@ -24,9 +24,9 @@ const Nav: React.FC = () => {
   const listItemStyles =
     "flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start";
 
+  // Close the mobile menu if the screen size goes above the breakpoint
   useEffect(() => {
     const handleResize = () => {
-      // Close the mobile menu if the screen size goes above the breakpoint
       if (window.innerWidth >= 768 && isNavOpen) {
         setIsNavOpen(false);
       }
@@ -49,6 +49,7 @@ const Nav: React.FC = () => {
             THE PLANETS
           </h2>
 
+          {/* desktop / tablet nav */}
           <ul className="hidden h-fullflex-row gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
             {planets.map((planet) => {
               return (
@@ -65,6 +66,7 @@ const Nav: React.FC = () => {
             })}
           </ul>
 
+          {/* hamburger */}
           <div className="MOBILE-MENU flex md:hidden">
             <div
               className="HAMBURGER-ICON space-y-2"
@@ -78,6 +80,7 @@ const Nav: React.FC = () => {
         </div>
       </div>
 
+      {/* mobile nav */}
       {isNavOpen && (
         <div className="flex-column flex items-center justify-center">
           <ul className="mx-8 flex min-h-[250px] w-full flex-col items-center justify-between font-medium tracking-widest text-veryLightGrey">

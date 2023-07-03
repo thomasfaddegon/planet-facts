@@ -2,7 +2,7 @@ import React from "react";
 
 interface FactBoxProps {
   metricName: string;
-  metricValue: string;
+  metricValue: string | undefined;
 }
 
 const FactBox: React.FC<FactBoxProps> = ({ metricName, metricValue }) => {

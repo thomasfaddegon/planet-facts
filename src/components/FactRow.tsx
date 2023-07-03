@@ -1,20 +1,30 @@
-<div className="mt-20 flex h-32 w-full flex-row gap-8">
-  <FactBox metricName="Rotation Time" metricValue="0.99 Days" />
-  <FactBox metricName="Revolution Time" metricValue="58.6 Days" />
-  <FactBox metricName="Radius" metricValue="58.6 Days" />
-  <FactBox metricName="Average Temp." metricValue="58.6 Days" />
-</div>;
-
 import React from "react";
 import FactBox from "./FactBox";
+import data from "../../data.json";
+import { useStore, Store } from "../store";
+import { PlanetData } from "../types";
 
 const FactRow: React.FC = ({}) => {
+  const currentPlanet = useStore((state: Store) => state.planet);
+
+  const planetData: PlanetData | undefined = data.find(
+    (planet) => planet.name.toLowerCase() === currentPlanet.toLowerCase()
+  );
+
+  console.log(planetData);
+
   return (
     <div className="mt-10 flex h-32 w-full flex-row gap-8">
-      <FactBox metricName="Rotation Time" metricValue="0.99 Days" />
-      <FactBox metricName="Revolution Time" metricValue="58.6 Days" />
-      <FactBox metricName="Radius" metricValue="58.6 Days" />
-      <FactBox metricName="Average Temp." metricValue="58.6 Days" />
+      <FactBox metricName="Rotation Time" metricValue={planetData?.rotation} />
+      <FactBox
+        metricName="Revolution Time"
+        metricValue={planetData?.revolution}
+      />
+      <FactBox metricName="Radius" metricValue={planetData?.radius} />
+      <FactBox
+        metricName="Average Temp."
+        metricValue={planetData?.temperature}
+      />
     </div>
   );
 };
