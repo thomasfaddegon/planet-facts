@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useStore, Store } from "../store";
+import { useStore } from "../store";
 
 const Nav: React.FC = () => {
   const planets: string[] = [
@@ -15,14 +15,7 @@ const Nav: React.FC = () => {
 
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
 
-  const changePlanet = useStore((state: Store) => {
-    return state.changePlanet;
-  });
-
-  const currentPlanet = useStore((state: Store) => state.planet);
-
-  const listItemStyles =
-    "flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start";
+  const { currentPlanet, changePlanet } = useStore();
 
   // Close the mobile menu if the screen size goes above the breakpoint
   useEffect(() => {
@@ -40,6 +33,10 @@ const Nav: React.FC = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [isNavOpen]);
+
+  // li styles
+  const listItemStyles =
+    "flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start";
 
   return (
     <nav>

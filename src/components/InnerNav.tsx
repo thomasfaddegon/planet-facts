@@ -1,16 +1,9 @@
 import React from "react";
 import TransparentButton from "./TransparentButton";
-import { useStore, Store } from "../store";
-
-// interface InnerNavProps {
-//   active: string;
-//   planet: string;
-// }
+import { useStore } from "../store";
 
 const InnerNav: React.FC = ({}) => {
-  const changeSection = useStore((state: Store) => {
-    return state.changeSection;
-  });
+  const { changeSection } = useStore();
 
   return (
     <div className="flex flex-col gap-4">

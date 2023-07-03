@@ -1,12 +1,12 @@
 import { useStore } from "../store";
 
 const PlanetImage: React.FC = ({}) => {
-  const planet = useStore((state) => state.planet);
+  const { currentPlanet } = useStore();
 
   return (
     <div className="m-2 flex w-8/12 justify-center">
       <img
-        src={`/images/planet-${planet}.svg`}
+        src={`/images/planet-${currentPlanet}.svg`}
         className="pr-12 pt-6 lg:pb-10"
         alt="planet"
       />

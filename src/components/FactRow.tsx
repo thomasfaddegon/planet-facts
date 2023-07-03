@@ -1,17 +1,12 @@
 import React from "react";
 import FactBox from "./FactBox";
-import data from "../../data.json";
-import { useStore, Store } from "../store";
-import { PlanetData } from "../types";
+import { useStore } from "../store";
+import { getPlanetData } from "../utils";
 
 const FactRow: React.FC = ({}) => {
-  const currentPlanet = useStore((state: Store) => state.planet);
+  const { currentPlanet } = useStore();
 
-  const planetData: PlanetData | undefined = data.find(
-    (planet) => planet.name.toLowerCase() === currentPlanet.toLowerCase()
-  );
-
-  console.log(planetData);
+  const planetData = getPlanetData(currentPlanet);
 
   return (
     <div className="mt-10 flex h-32 w-full flex-row gap-8">
