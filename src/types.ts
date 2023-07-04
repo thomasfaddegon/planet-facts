@@ -21,6 +21,7 @@ export interface PlanetData {
     internal: string;
     geology: string;
   };
+  color: string;
 }
 
 export type Section = "overview" | "structure" | "geology";
