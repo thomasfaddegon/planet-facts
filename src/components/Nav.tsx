@@ -15,7 +15,7 @@ const Nav: React.FC = () => {
 
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
 
-  const { currentPlanet, changePlanet } = useStore();
+  const { currentPlanet, changePlanet, currentColor } = useStore();
 
   // Close the mobile menu if the screen size goes above the breakpoint
   useEffect(() => {
@@ -49,13 +49,19 @@ const Nav: React.FC = () => {
           {/* desktop / tablet nav */}
           <ul className="hidden h-fullflex-row gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
             {planets.map((planet) => {
+              const activeStyle =
+                planet.toLowerCase() === currentPlanet.toLowerCase()
+                  ? {
+                      borderTop: `4px solid ${currentColor}`,
+                      borderBottom: `4px solid transparent`,
+                    }
+                  : {};
               return (
                 <li
-                  className={`h-full flex items-center cursor-pointer ${
-                    planet === currentPlanet && "border-t-4 pb-1 border-white"
-                  }`}
+                  className="h-full flex items-center cursor-pointer p-2"
                   key={planet}
                   onClick={() => changePlanet(planet)}
+                  style={activeStyle}
                 >
                   {planet}
                 </li>

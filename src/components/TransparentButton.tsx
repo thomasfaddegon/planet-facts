@@ -23,7 +23,7 @@ const TransparentButton: React.FC<TransparentButtonProps> = ({
 
   return (
     <div
-      className="font-league-spartan flex w-full cursor-pointer flex-row rounded-sm border border-darkGrey p-4 text-center text-sm font-medium uppercase transition-all duration-300 ease-in-out"
+      className="font-league-spartan flex w-full cursor-pointer flex-row rounded-sm border border-darkGrey p-4 text-center text-sm font-medium uppercase transition-all duration-200 ease-in-out"
       onClick={onClick}
       style={buttonStyle}
     >
