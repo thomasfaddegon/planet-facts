@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="flex flex-col pb-24">
       <Nav />
-      <div className="flex-col flex min-h-[100vh] w-full justify-center items-center pt-8 lg:pt-16">
+      <div className="flex-col flex min-h-[100vh] w-full justify-center items-center pt-12 lg:pt-16">
         <Planet />
       </div>
     </div>
