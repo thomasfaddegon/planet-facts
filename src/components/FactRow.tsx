@@ -9,7 +9,7 @@ const FactRow: React.FC = ({}) => {
   const planetData = getPlanetData(currentPlanet);
 
   return (
-    <div className="mt-10 flex h-32 w-full flex-row gap-8">
+    <div className="mt-10 flex h-24 lg:h-32 w-full flex-col md:flex-row gap-3 lg:gap-8">
       <FactBox metricName="Rotation Time" metricValue={planetData?.rotation} />
       <FactBox
         metricName="Revolution Time"

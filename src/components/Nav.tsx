@@ -42,12 +42,12 @@ const Nav: React.FC = () => {
     <nav className="flex flex-col md:flex-row">
       <div className="flex w-full h-full xl:h-[6rem] flex-row justify-center border-b-[1px] border-slate-800">
         <div className="flex w-full h-full items-center justify-between md:max-w-[95rem] md:flex-col xl:flex-row py-6 xl:py-0 px-4">
-          <h2 className="mb-0 text-3xl md:mb-8 xl:mb-0 self-center">
-            THE PLANETS
+          <h2 className="mb-0 text-3xl md:mb-8 xl:mb-0 self-center uppercase">
+            The Planets
           </h2>
 
           {/* desktop / tablet nav */}
-          <ul className="hidden h-[3rem] flex-row gap-5 xl:gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
+          <ul className="hidden h-[3rem] xl:h-full flex-row gap-5 xl:gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
             {planets.map((planet) => {
               const activeStyle =
                 planet.toLowerCase() === currentPlanet.toLowerCase()

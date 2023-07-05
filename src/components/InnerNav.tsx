@@ -8,7 +8,7 @@ const InnerNav: React.FC = ({}) => {
   console.log(currentSection);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="hidden md:flex flex-col gap-4 h-full justify-center">
       <TransparentButton
         id="overview"
         number="01"
