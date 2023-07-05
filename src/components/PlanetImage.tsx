@@ -1,13 +1,25 @@
 import { useStore } from "../store";
 
-const PlanetImage: React.FC = ({}) => {
+const PlanetImage: React.FC = () => {
   const { currentPlanet, currentSection } = useStore();
+
+  const sizes: { [key: string]: string } = {
+    mercury: "45%",
+    venus: "55%",
+    earth: "65%",
+    mars: "55%",
+    jupiter: "90%",
+    saturn: "90%",
+    uranus: "70%",
+    neptune: "80%",
+  };
+
+  let size: string = sizes[currentPlanet] || "50%";
 
   let imgURL;
 
   switch (currentSection) {
     case "overview":
-      imgURL = `/images/planet-${currentPlanet}.svg`;
     case "geology":
       imgURL = `/images/planet-${currentPlanet}.svg`;
       break;
@@ -18,14 +30,21 @@ const PlanetImage: React.FC = ({}) => {
       imgURL = `/images/planet-${currentPlanet}.svg`;
   }
 
+  const imageStyle = {
+    maxWidth: "100%",
+    height: "auto",
+    width: size,
+  };
+
   return (
-    <div className="m-2 flex flex-col justify-center h-full  relative">
-      <img src={imgURL} className="" alt="planet" />
+    <div className="m-2 flex flex-col justify-center items-center h-full relative">
+      <img src={imgURL} style={imageStyle} alt="planet" />
       {currentSection === "geology" && (
         <img
           src={`/images/geology-${currentPlanet}.png`}
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-6 w-1/3 z-20"
-        ></img>
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-[25%] w-1/6 z-20"
+          alt="geology"
+        />
       )}
     </div>
   );

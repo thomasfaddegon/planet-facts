@@ -39,9 +39,9 @@ const Nav: React.FC = () => {
     "flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start";
 
   return (
-    <nav className="flex flex-col md:flex-row">
+    <nav className="flex flex-col lg:flex-row">
       <div className="flex w-full h-full xl:h-[6rem] flex-row justify-center border-b-[1px] border-slate-800">
-        <div className="flex w-full h-full items-center justify-between md:max-w-[95rem] md:flex-col xl:flex-row py-6 xl:py-0 px-4">
+        <div className="flex w-full h-full items-center justify-between md:max-w-[95rem] md:flex-col lg:flex-row py-6 xl:py-0 px-4">
           <h2 className="mb-0 text-3xl md:mb-8 xl:mb-0 self-center uppercase">
             The Planets
           </h2>
