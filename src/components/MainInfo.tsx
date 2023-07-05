@@ -13,7 +13,7 @@ const MainInfo: React.FC = () => {
   return (
     <div className="flex flex-col gap-8 text-center md:text-left">
       <h1 className="text-5xl lg:text-7xl">{planetData?.name}</h1>
-      <p className="spartan pr-2 tracking-wide min-h-[10rem]">
+      <p className="spartan pr-2 tracking-wide lg:min-h-[10rem]">
         {planetData?.[section].content}
       </p>
       <p>

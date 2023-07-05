@@ -40,14 +40,14 @@ const Nav: React.FC = () => {
 
   return (
     <nav className="flex flex-col lg:flex-row">
-      <div className="flex w-full h-full xl:h-[6rem] flex-row justify-center border-b-[1px] border-slate-800">
-        <div className="flex w-full h-full items-center justify-between md:max-w-[95rem] md:flex-col lg:flex-row py-6 xl:py-0 px-4">
-          <h2 className="mb-0 text-3xl md:mb-8 xl:mb-0 self-center uppercase">
+      <div className="flex w-full h-full lg:h-[6rem] flex-row justify-center border-b-[1px] border-slate-800">
+        <div className="flex w-full h-full items-center justify-between md:max-w-[95rem] md:flex-col lg:flex-row py-6 lg:py-0 px-4">
+          <h2 className="mb-0 text-3xl md:mb-8 lg:mb-0 self-center uppercase">
             The Planets
           </h2>
 
           {/* desktop / tablet nav */}
-          <ul className="hidden h-[3rem] xl:h-full flex-row gap-5 xl:gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
+          <ul className="hidden h-[3rem] lg:h-full flex-row gap-4 lg:gap-8 text-sm font-medium uppercase tracking-wider text-veryLightGrey md:flex">
             {planets.map((planet) => {
               const activeStyle =
                 planet.toLowerCase() === currentPlanet.toLowerCase()
