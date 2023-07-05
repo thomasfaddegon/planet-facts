@@ -11,8 +11,8 @@ const Planet: React.FC = ({}) => {
       <div className="flex flex-col lg:flex-row min-h-[42rem] items-center lg:items-stretch">
         <PlanetImage />
         {/* facts column  */}
-        <div className="flex lg:w-4/12 flex-row lg:flex-col gap-8 lg:pl-6 mt-16 lg:mt-0 p-4 lg:p-0 ">
-          <div className="w-7/12 lg:w-full">
+        <div className="flex lg:w-4/12 flex-row lg:flex-col gap-8 lg:pl-6 mt-16 lg:mt-0 md:p-4 lg:p-0 ">
+          <div className="md:w-7/12 lg:w-full">
             <MainInfo />
           </div>
           <div className="w-5/12 lg:w-full hidden md:block">
@@ -20,7 +20,9 @@ const Planet: React.FC = ({}) => {
           </div>
         </div>
       </div>
-      <FactRow />
+      <div className="md:px-4">
+        <FactRow />
+      </div>
     </div>
   );
 };
