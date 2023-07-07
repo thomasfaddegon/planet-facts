@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useStore } from "../store";
+import { PlanetData } from "../types";
+import data from "../../data.json";
 
 const Nav: React.FC = () => {
   const planets: string[] = [
@@ -34,9 +36,14 @@ const Nav: React.FC = () => {
     };
   }, [isNavOpen]);
 
+  // data colors
+  const colors = data.map((planet: PlanetData) => {
+    return planet.color;
+  });
+
   // li styles
   const listItemStyles =
-    "flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start";
+    "flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start ";
 
   return (
     <nav className="flex flex-col lg:flex-row">
@@ -85,13 +92,20 @@ const Nav: React.FC = () => {
 
       {/* mobile nav */}
       {isNavOpen && (
-        <div className="flex-col flex items-center justify-center">
+        <div className="flex-col flex items-center justify-center mx-6">
           <ul className="mx-8 flex min-h-[250px] w-full flex-col items-center justify-between font-medium tracking-widest text-veryLightGrey">
-            {planets.map((planet) => (
+            {planets.map((planet, index) => (
               <li key={planet} className={listItemStyles}>
-                <span className="mr-5">O</span>
+                <div className="mr-6">
+                  <div
+                    className={`w-5 h-5 rounded-full bg-[${colors[index]}]`}
+                    style={{ backgroundColor: colors[index] }}
+                  ></div>
+                </div>
                 {planet}
-                <div className="ml-auto mr-4">A</div>
+                <div className="ml-auto">
+                  <img src="public/images/icon-chevron.svg" />
+                </div>
               </li>
             ))}
           </ul>

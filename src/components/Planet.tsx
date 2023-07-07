@@ -9,7 +9,7 @@ const Planet: React.FC = ({}) => {
     <div className="max-w-[30rem] md:max-w-[53rem] lg:max-w-[78rem] px-6 lg:px-16">
       {/* row with planet and info */}
       <div className="flex flex-col lg:flex-row  items-center lg:mb-12 lg:h-[40rem]">
-        <div className="lg:w-8/12 px-8 lg:pr-12">
+        <div className="lg:h-auto lg:w-8/12 px-8 lg:pr-12">
           <PlanetImage />
         </div>
 
