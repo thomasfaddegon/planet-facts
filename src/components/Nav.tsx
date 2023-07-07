@@ -41,14 +41,10 @@ const Nav: React.FC = () => {
     return planet.color;
   });
 
-  // li styles
-  const listItemStyles =
-    "flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start ";
-
   return (
     <nav className="flex flex-col lg:flex-row">
       <div className="flex w-full h-full lg:h-[6rem] flex-row justify-center border-b-[1px] border-slate-800">
-        <div className="flex w-full h-full items-center justify-between md:max-w-[95rem] md:flex-col lg:flex-row py-6 lg:py-0 px-4">
+        <div className="flex w-full h-full items-center justify-between md:max-w-[95rem] md:flex-col lg:flex-row py-4 md:py-6 lg:py-0 px-4">
           <h2 className="mb-0 text-3xl md:mb-8 lg:mb-0 self-center uppercase">
             The Planets
           </h2>
@@ -95,7 +91,14 @@ const Nav: React.FC = () => {
         <div className="flex-col flex items-center justify-center mx-6">
           <ul className="mx-8 flex min-h-[250px] w-full flex-col items-center justify-between font-medium tracking-widest text-veryLightGrey">
             {planets.map((planet, index) => (
-              <li key={planet} className={listItemStyles}>
+              <li
+                key={planet}
+                className="flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start "
+                onClick={() => {
+                  setIsNavOpen(false);
+                  changePlanet(planet);
+                }}
+              >
                 <div className="mr-6">
                   <div
                     className={`w-5 h-5 rounded-full bg-[${colors[index]}]`}
