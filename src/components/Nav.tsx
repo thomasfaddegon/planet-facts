@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useStore } from "../store";
 import { PlanetData } from "../types";
 import data from "../../data.json";
+import SecondaryNav from "./SecondaryNav";
 
 const Nav: React.FC = () => {
   const planets: string[] = [
@@ -85,15 +86,14 @@ const Nav: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* mobile nav */}
+      {!isNavOpen && <SecondaryNav />}
       {isNavOpen && (
         <div className="flex-col flex items-center justify-center mx-6">
           <ul className="mx-8 flex min-h-[250px] w-full flex-col items-center justify-between font-medium tracking-widest text-veryLightGrey">
             {planets.map((planet, index) => (
               <li
                 key={planet}
-                className="flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start "
+                className="flex flex-row border-b border-slate-800 py-6 uppercase w-full items-center justify-start"
                 onClick={() => {
                   setIsNavOpen(false);
                   changePlanet(planet);
