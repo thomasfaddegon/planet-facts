@@ -19,12 +19,16 @@ const TransparentButton: React.FC<TransparentButtonProps> = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const buttonStyle = {
-    backgroundColor: active ? currentColor : isHovered ? "red" : "transparent",
+    backgroundColor: active
+      ? currentColor
+      : isHovered
+      ? "#2B2B3F"
+      : "transparent",
   };
 
   return (
     <div
-      className="font-league-spartan flex w-full cursor-pointer flex-row rounded-sm border border-darkGrey p-4 text-center text-sm font-medium uppercase transition-all duration-200 ease-in-out"
+      className="font-league-spartan flex w-full cursor-pointer flex-row rounded-sm border border-darkGrey p-4 text-center text-sm font-medium uppercase transition-all duration-100 ease-in-out"
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
