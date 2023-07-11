@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStore } from "../store";
 
 interface TransparentButtonProps {
@@ -16,15 +16,18 @@ const TransparentButton: React.FC<TransparentButtonProps> = ({
   active,
 }) => {
   const { currentColor } = useStore();
+  const [isHovered, setIsHovered] = useState(false);
 
   const buttonStyle = {
-    backgroundColor: active ? currentColor : "transparent",
+    backgroundColor: active ? currentColor : isHovered ? "red" : "transparent",
   };
 
   return (
     <div
       className="font-league-spartan flex w-full cursor-pointer flex-row rounded-sm border border-darkGrey p-4 text-center text-sm font-medium uppercase transition-all duration-200 ease-in-out"
       onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={buttonStyle}
     >
       <div className="number pl-3 pr-6">{number}</div>
