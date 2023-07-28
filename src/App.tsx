@@ -7,7 +7,7 @@ import backgroundStars from "../public/images/background-stars.svg";
 function App() {
   return (
     <div
-      className="flex flex-col mb-8 h-[100vh]"
+      className="flex flex-col mb-8 h-[100vh] bg-zooming"
       style={{ backgroundImage: `url(${backgroundStars})` }}
     >
       <div className="flex flex-col mb-8 ">

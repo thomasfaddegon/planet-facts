@@ -34,6 +34,7 @@ const PlanetImage: React.FC = () => {
     maxWidth: "100%",
     height: "auto",
     width: size,
+    animation: "floatUpDown 5s ease-in-out infinite", // Add the animation property here
   };
 
   return (
