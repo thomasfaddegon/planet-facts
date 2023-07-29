@@ -61,9 +61,7 @@ code {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(
-      -10px
-    ); /* Adjust the value to control the float height */
+    transform: translateY(-10px);
   }
 }
 
@@ -76,7 +74,6 @@ code {
   }
 }
 
-/* Optionally, set the animation duration and timing function */
 .bg-scrolling {
   animation: scrollLeft 30s linear infinite;
 }
