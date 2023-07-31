@@ -2,6 +2,7 @@ import React from "react";
 import { useStore } from "../store";
 import { getPlanetData } from "../utils";
 import { PlanetData, Section } from "../types";
+import arrow from "../../public/images/icon-source.svg";
 
 const MainInfo: React.FC = () => {
   const { currentPlanet, currentSection } = useStore();
@@ -17,7 +18,13 @@ const MainInfo: React.FC = () => {
         {planetData?.[section].content}
       </p>
       <p>
-        <a href={planetData?.[section].source}>Source: Wikipedia</a>{" "}
+        <a href={planetData?.[section].source} target="_blank">
+          <div className="flex flex-row items-center gap-1 hover:underline hover:text-white">
+            <span>Source: Wikipedia</span>
+            <img src={arrow} className="w-3 h-3 translate-y-[-1px]" />
+            {""}
+          </div>
+        </a>
       </p>
     </div>
   );
