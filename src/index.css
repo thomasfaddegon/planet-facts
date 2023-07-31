@@ -90,5 +90,5 @@ code {
 }
 
 .bg-zooming {
-  animation: zoomIn 30s linear infinite;
+  animation: zoomIn 25s linear infinite;
 }

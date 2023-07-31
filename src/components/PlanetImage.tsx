@@ -9,7 +9,7 @@ const PlanetImage: React.FC = () => {
     earth: "w-36 h-36 md:w-48 md:h-48 lg:w-[25rem] lg:h-[25rem]",
     mars: "w-32 h-32 md:w-44 md:h-44 lg:w-[20rem] lg:h-[20rem]",
     jupiter: "w-44 h-44 md:w-64 md:h-64 lg:w-[36rem] lg:h-[36rem]",
-    saturn: "w-44 h-44 md:w-64 md:h-64 lg:w-[34rem] lg:h-[34rem]",
+    saturn: "w-48 h-48 md:w-64 md:h-64 lg:w-[34rem] lg:h-[34rem]",
     uranus: "w-40 h-40 md:w-56 md:h-56 lg:w-[30rem] lg:h-[30rem]",
     neptune: "w-40 h-40 md:w-56 md:h-56 lg:w-[30rem] lg:h-[30rem]",
   };
@@ -43,7 +43,7 @@ const PlanetImage: React.FC = () => {
       {currentSection === "geology" && (
         <img
           src={`/images/geology-${currentPlanet}.png`}
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-[25%] w-1/6 z-20"
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-[25%] w-1/3 lg:w-1/6 z-20"
           alt="geology"
         />
       )}
