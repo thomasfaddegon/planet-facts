@@ -62,7 +62,7 @@ const Nav: React.FC = () => {
                   : {};
               return (
                 <li
-                  className="h-full flex items-center cursor-pointer p-2"
+                  className="h-full flex items-center cursor-pointer p-2 hover:text-white"
                   key={planet}
                   onClick={() => changePlanet(planet)}
                   style={activeStyle}

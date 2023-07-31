@@ -7,7 +7,7 @@ module.exports = {
       sm: "640px",
       // => @media (min-width: 640px) { ... }
 
-      md: "740px",
+      md: "720px",
       // => @media (min-width: 768px) { ... }
 
       lg: "1024px",
@@ -40,6 +40,15 @@ module.exports = {
       fontFamily: {
         spartan: ["League Spartan", "sans-serif"],
         antonio: ["Antonio", "sans-serif"],
+      },
+      keyframes: {
+        floatUpDown: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        floatUpDown: "floatUpDown 4s infinite ease-in-out",
       },
     },
   },
