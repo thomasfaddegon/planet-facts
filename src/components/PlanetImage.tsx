@@ -28,8 +28,6 @@ const PlanetImage: React.FC = () => {
       imgURL = `/images/planet-${currentPlanet}.svg`;
   }
 
-  console.log(sizes[currentPlanet]);
-
   let size: string =
     sizes[currentPlanet] || "w-32 h-32 md:w-40 md:h-40 lg:w-56 lg:h-56";
 

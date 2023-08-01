@@ -12,8 +12,6 @@ const SecondaryNavButton: React.FC<SecondaryNavButtonProps> = ({
 }) => {
   const { currentColor, changeSection, currentSection } = useStore();
 
-  console.log(currentSection);
-
   let buttonStyle;
   id === currentSection
     ? (buttonStyle = {
